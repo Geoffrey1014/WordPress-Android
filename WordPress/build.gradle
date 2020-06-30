@@ -85,6 +85,7 @@ android {
         release {
             // Proguard is used to shrink our apk, and reduce the number of methods in our final apk,
             // but we don't obfuscate the bytecode.
+            testCoverageEnabled true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
         }

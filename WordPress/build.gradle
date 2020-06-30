@@ -31,7 +31,7 @@ android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompi
 android {
     signingConfigs {
         droidfuzzing {
-            storeFile file('C:\\Users\\38234\\OneDrive\\android-app-bugs-dataset-app\\droidfuzzing.jks')
+            storeFile file('/home/juwang/droidfuzzing.jks')
             storePassword 'droidfuzzing'
             keyAlias 'droidfuzzing'
             keyPassword 'droidfuzzing'

@@ -24,10 +24,19 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'io.fabric'
+apply plugin: 'jacoco'
 
 android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
 
 android {
+    signingConfigs {
+        droidfuzzing {
+            storeFile file('C:\\Users\\38234\\OneDrive\\android-app-bugs-dataset-app\\droidfuzzing.jks')
+            storePassword 'droidfuzzing'
+            keyAlias 'droidfuzzing'
+            keyPassword 'droidfuzzing'
+        }
+    }
     useLibrary 'org.apache.http.legacy'
 
     dexOptions {
@@ -81,6 +90,7 @@ android {
         }
 
         debug {
+            testCoverageEnabled true
             minifyEnabled false
             buildConfigField "String", "APP_PN_KEY", "\"org.wordpress.android.debug.build\""
             ext.enableCrashlytics = false

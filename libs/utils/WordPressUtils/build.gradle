@@ -11,6 +11,7 @@ buildscript {
 
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'jacoco'
 
 repositories {
     google()
@@ -37,6 +38,12 @@ android {
         versionName "1.22"
         minSdkVersion 15
         targetSdkVersion 26
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
     }
 }
 

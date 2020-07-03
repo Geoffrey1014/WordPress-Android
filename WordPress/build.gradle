@@ -24,6 +24,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'io.fabric'
+apply plugin: 'jacoco'
 
 apply from: 'gutenberg-tasks.gradle'
 
@@ -91,6 +92,7 @@ android {
         }
 
         debug {
+            testCoverageEnabled true
             minifyEnabled false
             buildConfigField "String", "APP_PN_KEY", "\"org.wordpress.android.debug.build\""
             ext.enableCrashlytics = false

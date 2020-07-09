@@ -5,7 +5,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'io.fabric.tools:gradle:1.+'
+        classpath 'io.fabric.tools:gradle:1.27.1'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'com.google.gms:google-services:3.1.0'
     }
@@ -22,6 +22,7 @@ repositories {
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'jacoco'
 
 android {
     useLibrary 'org.apache.http.legacy'
@@ -72,6 +73,7 @@ android {
         }
 
         debug {
+            testCoverageEnabled true
             minifyEnabled false
             buildConfigField "String", "APP_PN_KEY", "\"org.wordpress.android.debug.build\""
             ext.enableCrashlytics = false

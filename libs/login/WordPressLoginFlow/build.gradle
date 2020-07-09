@@ -8,6 +8,7 @@ buildscript {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'jacoco'
 
 repositories {
     google()
@@ -28,6 +29,12 @@ android {
         versionName "1.0"
 
         vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
     }
 }
 

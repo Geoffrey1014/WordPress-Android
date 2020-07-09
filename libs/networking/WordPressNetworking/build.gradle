@@ -15,6 +15,7 @@ repositories {
 
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
+apply plugin: 'jacoco'
 
 android {
     publishNonDefault true
@@ -26,6 +27,12 @@ android {
         minSdkVersion 14
         targetSdkVersion 25
         versionName "1.0.0"
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
     }
 }
 

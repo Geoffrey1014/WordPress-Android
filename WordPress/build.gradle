@@ -19,6 +19,11 @@ repositories {
 
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = "0.8.5"
+}
 
 android {
     useLibrary 'org.apache.http.legacy'
@@ -71,6 +76,7 @@ android {
         }
 
         debug {
+            testCoverageEnabled true
             minifyEnabled false
             buildConfigField "String", "APP_PN_KEY", "\"org.wordpress.android.debug.build\""
             ext.enableCrashlytics = false

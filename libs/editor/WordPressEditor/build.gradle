@@ -11,12 +11,17 @@ buildscript {
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
 apply plugin: 'signing'
+apply plugin: 'jacoco'
 
 repositories {
     google()
     jcenter()
     maven { url "https://jitpack.io" }
 }
+jacoco {
+    toolVersion = "0.8.5"
+}
+
 
 android {
     compileSdkVersion 26
@@ -32,6 +37,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            testCoverageEnabled true
         }
     }
 

@@ -10,21 +10,29 @@ buildscript {
 repositories {
     jcenter()
     maven { url 'http://wordpress-mobile.github.io/WordPress-Android' }
+    maven { url "https://maven.google.com"}
 }
 
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
+apply plugin: 'jacoco'
 
 android {
     publishNonDefault true
 
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 25
         versionName "1.0.0"
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
     }
 }
 

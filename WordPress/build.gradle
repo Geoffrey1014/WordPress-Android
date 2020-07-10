@@ -25,6 +25,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'se.bjurr.violations.violation-comments-to-github-gradle-plugin'
 apply plugin: 'kotlin-allopen'
+apply plugin: 'jacoco'
 
 allOpen {
     // allows mocking for classes w/o directly opening them for release builds
@@ -112,6 +113,7 @@ android {
         }
 
         debug {
+            testCoverageEnabled true
             minifyEnabled false
             buildConfigField "String", "APP_PN_KEY", "\"org.wordpress.android.debug.build\""
         }

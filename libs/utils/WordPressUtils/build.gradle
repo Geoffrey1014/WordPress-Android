@@ -16,6 +16,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'jacoco'
 
 repositories {
     google()
@@ -57,6 +58,12 @@ android {
         targetSdkVersion 26
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes{
+        debug {
+            testCoverageEnabled true
+        }
     }
     testOptions {
         unitTests {

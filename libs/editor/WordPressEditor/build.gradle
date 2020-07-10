@@ -23,7 +23,7 @@ repositories {
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
 apply plugin: 'signing'
-
+apply plugin: 'jacoco'
 
 // import the `submoduleGitHash()` function
 apply from: 'https://gist.githubusercontent.com/hypest/e06f6097065728b6db7b7c462f8fef1a/raw/3b91756fca76e4c2a9b573313e186c47842e1f7d/submoduleGitHash.gradle'
@@ -49,6 +49,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            testCoverageEnabled true
         }
     }
 

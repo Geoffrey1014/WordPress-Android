@@ -22,4 +22,4 @@ public class SMSInstrumentedReceiver extends BroadcastReceiver {
             mListener.dumpIntermediateCoverage(coverageFilePath);
         }
     }
-} 
+}

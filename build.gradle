@@ -11,6 +11,10 @@ buildscript {
     ext.gutenbergMobileVersion = 'v1.62.0'
 
     repositories {
+//        maven{url 'https://maven.aliyun.com/repository/jcenter'}
+        maven{url 'https://maven.aliyun.com/repository/google'}
+        maven{url 'https://maven.aliyun.com/repository/public'}
+        maven{url 'https://maven.aliyun.com/repository/central'}
         maven {
             url 'https://a8c-libs.s3.amazonaws.com/android'
             content {
@@ -39,6 +43,10 @@ allprojects {
     apply plugin: 'io.gitlab.arturbosch.detekt'
 
     repositories {
+//        maven{url 'https://maven.aliyun.com/repository/jcenter'}
+        maven{url 'https://maven.aliyun.com/repository/google'}
+        maven{url 'https://maven.aliyun.com/repository/public'}
+        maven{url 'https://maven.aliyun.com/repository/central'}
         google()
         jcenter()
         maven { url "https://jitpack.io" }

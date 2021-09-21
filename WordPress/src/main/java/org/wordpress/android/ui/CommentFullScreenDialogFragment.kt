@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
+import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +36,7 @@ class CommentFullScreenDialogFragment : Fragment(), CollapseFullScreenDialogCont
     private lateinit var dialogController: CollapseFullScreenDialogController
     private lateinit var reply: SuggestionAutoCompleteText
     private val coroutineScope = CoroutineScope(Dispatchers.Default)
+    private lateinit var siteModel: SiteModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -73,14 +75,21 @@ class CommentFullScreenDialogFragment : Fragment(), CollapseFullScreenDialogCont
             reply.setText(it.getString(EXTRA_REPLY))
             reply.setSelection(it.getInt(EXTRA_SELECTION_START), it.getInt(EXTRA_SELECTION_END))
             viewModel.init()
+            try {
+                siteModel = siteStore.getSiteBySiteId(it.getLong(EXTRA_SITE_ID))!!
+
+            }catch (e : NullPointerException){
+                Log.i("Themis", "CommentFullScreenDialogFragment onCreateView: BOMB! Crash!: IllegalStateException")
+            }
+            setupSuggestionServiceAndAdapter(siteModel)
 
             // Allow @username suggestion in full screen comment Editor on the Reader,
             // but only on sites in the siteStore (i.e: current user's site).
             // No suggestion is available for external sites that the user follows in the Reader.
-            val siteModel: SiteModel? = siteStore.getSiteBySiteId(it.getLong(EXTRA_SITE_ID))
-            if (siteModel != null) {
-                setupSuggestionServiceAndAdapter(siteModel)
-            }
+//            val siteModel: SiteModel? = siteStore.getSiteBySiteId(it.getLong(EXTRA_SITE_ID))
+//            if (siteModel != null) {
+//                setupSuggestionServiceAndAdapter(siteModel)
+//            }
         }
 
         return layout

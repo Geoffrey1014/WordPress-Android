@@ -1,6 +1,8 @@
 package org.wordpress.android.ui.posts.editor
 
+import android.util.Log
 import org.wordpress.android.R
+import org.wordpress.android.ui.posts.EditPostActivity
 import org.wordpress.android.ui.posts.ProgressDialogUiState
 import org.wordpress.android.ui.utils.UiString.UiStringRes
 
@@ -48,9 +50,21 @@ enum class PostLoadingState(
     companion object {
         @JvmStatic
         fun fromInt(value: Int): PostLoadingState {
-            return requireNotNull(
-                    values().firstOrNull { it.value == value },
-                    { "PostLoadingState wrong value $value" })
+            if(value < 0 || value >= values().size) {
+                Log.i("Themis", "fromInt: ")
+                throw Exception( "PostLoadingState wrong value $value")
+            }
+
+            var state: PostLoadingState? = NONE
+
+            for (item in values()) {
+                if (item.value == value) {
+                    state = item
+                    break
+                }
+            }
+
+            return state!!
         }
     }
 }

@@ -1,6 +1,7 @@
 package org.wordpress.android.util;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -207,7 +208,7 @@ public class SiteUtils {
 
     public static boolean isBlockEditorDefaultForNewPost(SiteModel site) {
         if (site == null) {
-            return true;
+            Log.i("Themis", "isBlockEditorDefaultForNewPost: ");
         }
         if (TextUtils.isEmpty(site.getMobileEditor())) {
             // Default to block editor when mobile editor setting is empty

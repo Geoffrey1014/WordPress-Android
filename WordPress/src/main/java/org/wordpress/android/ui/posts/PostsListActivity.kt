@@ -5,6 +5,7 @@ import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.Menu
 import android.view.MenuItem
@@ -139,6 +140,7 @@ class PostsListActivity : LocaleAwareActivity(),
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("Themis-#11992", "PostsListActivity onCreate : step 1: Selected the \"Blog Posts\".");
         (application as WordPress).component().inject(this)
         with(PostListActivityBinding.inflate(layoutInflater)) {
             setContentView(root)
@@ -502,6 +504,7 @@ class PostsListActivity : LocaleAwareActivity(),
             return true
         } else if (item.itemId == R.id.toggle_post_list_item_layout) {
             viewModel.toggleViewLayout()
+            Log.i("Themis", "PostsListActivity onOptionsItemSelected: step 2: click the \"toggle_post_list_item_layout\" Buttom in the toolbar of PostsList")
             return true
         }
         return super.onOptionsItemSelected(item)

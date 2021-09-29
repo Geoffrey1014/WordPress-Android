@@ -1,6 +1,7 @@
 package org.wordpress.android.ui.posts.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -73,7 +74,12 @@ class PostListAdapter(
                 PostListItemViewHolder.Standard(parent, imageManager, uiHelpers)
             }
             VIEW_TYPE_POST_COMPACT -> {
-                PostListItemViewHolder.Compact(parent, imageManager, uiHelpers)
+                try {
+                    PostListItemViewHolder.Compact(parent, imageManager, uiHelpers)
+                }catch (e : NullPointerException){
+                    Log.i("Themis", "PostListAdapter onCreateViewHolder: BOMB! Crash! : NullPointerException")
+                    throw e
+                }
             }
             else -> {
                 // Fail fast if a new view type is added so the we can handle it

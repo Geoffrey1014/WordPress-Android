@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.HapticFeedbackConstants;
 import android.view.MenuItem;
 import android.view.View;
@@ -142,6 +143,7 @@ public class ReaderCommentListActivity extends LocaleAwareActivity implements On
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i("Themis", "ReaderCommentListActivity onCreate: step 2: click \"reader_activity_comment_list\"");
         ((WordPress) getApplication()).component().inject(this);
         setContentView(R.layout.reader_activity_comment_list);
         mViewModel = new ViewModelProvider(this, mViewModelFactory).get(ReaderCommentListViewModel.class);
@@ -291,7 +293,7 @@ public class ReaderCommentListActivity extends LocaleAwareActivity implements On
                                     mEditComment.getSelectionEnd(),
                                     mBlogId
                             );
-
+                    Log.i("Themis", "ReaderCommentListActivity onCreate: step 3 : click \"button_expand\"");
                     new Builder(ReaderCommentListActivity.this)
                             .setTitle(R.string.comment)
                             .setOnCollapseListener(this)

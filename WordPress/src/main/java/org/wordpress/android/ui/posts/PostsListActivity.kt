@@ -5,6 +5,7 @@ import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.Menu
 import android.view.MenuItem
@@ -139,6 +140,8 @@ class PostsListActivity : LocaleAwareActivity(),
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("Themis", "PostsListActivity onCreateOptionsMenu: step 1: Selected the \"Blog Posts\" ")
+
         (application as WordPress).component().inject(this)
         with(PostListActivityBinding.inflate(layoutInflater)) {
             setContentView(root)

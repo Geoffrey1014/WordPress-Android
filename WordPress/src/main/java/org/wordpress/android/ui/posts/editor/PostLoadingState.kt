@@ -51,8 +51,8 @@ enum class PostLoadingState(
         @JvmStatic
         fun fromInt(value: Int): PostLoadingState {
             if(value < 0 || value >= values().size) {
-                Log.i("Themis", "fromInt: ")
-                throw Exception( "PostLoadingState wrong value $value")
+                Log.i("Themis", "PostLoadingState fromInt: BOMB! Crash!: IllegalArgumentException")
+                throw RuntimeException( "PostLoadingState wrong value $value")
             }
 
             var state: PostLoadingState? = NONE

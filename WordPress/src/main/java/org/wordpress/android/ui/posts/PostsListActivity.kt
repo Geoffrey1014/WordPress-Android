@@ -112,6 +112,9 @@ class PostsListActivity : LocaleAwareActivity(),
         override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
 
         override fun onPageSelected(position: Int) {
+            if(position == 1){
+                Log.i("Themis", "PostsListActivity onPageSelected: step 2 :select page \"DRAFTS\" in post list ")
+            }
             viewModel.onTabChanged(position)
         }
 

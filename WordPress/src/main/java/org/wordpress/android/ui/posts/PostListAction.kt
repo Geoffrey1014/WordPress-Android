@@ -1,5 +1,6 @@
 package org.wordpress.android.ui.posts
 
+import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import org.wordpress.android.fluxc.model.PostModel
 import org.wordpress.android.fluxc.model.SiteModel
@@ -48,6 +49,7 @@ fun handlePostListAction(
 ) {
     when (action) {
         is PostListAction.EditPost -> {
+            Log.i("Themis", "PostListAction handlePostListAction: step 3: click \"Edit\" in the post list")
             ActivityLauncher.editPostOrPageForResult(activity, action.site, action.post, action.loadAutoSaveRevision)
         }
         is PostListAction.NewPost -> {

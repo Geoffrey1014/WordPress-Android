@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -3452,6 +3453,7 @@ public class EditPostActivity extends LocaleAwareActivity implements
         } else if (opResult == PreviewLogicOperationResult.OPENING_PREVIEW) {
             updatePostLoadingAndDialogState(PostLoadingState.PREVIEWING, mEditPostRepository.getPost());
         }
+        Log.i("Themis", "EditPostActivity showPreview: step 4: select \"Preview\" in options menu");
         return true;
     }
 

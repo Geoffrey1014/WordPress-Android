@@ -1,5 +1,6 @@
 package org.wordpress.android.ui.posts
 
+import android.util.Log
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
@@ -25,8 +26,10 @@ class PostsPagerAdapter(
         return fragment
     }
 
-    override fun getPageTitle(position: Int): CharSequence? =
-            WordPress.getContext().getString(pages[position].titleResId)
+    override fun getPageTitle(position: Int): CharSequence? {
+        Log.i("Themis", "getPageTitle: " + WordPress.getContext().getString(pages[position].titleResId))
+        return WordPress.getContext().getString(pages[position].titleResId)
+    }
 
     fun getItemAtPosition(position: Int): PostListFragment? {
         return listFragments[position]?.get()

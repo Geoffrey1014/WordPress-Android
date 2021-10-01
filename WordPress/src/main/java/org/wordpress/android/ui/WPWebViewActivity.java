@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -885,6 +886,7 @@ public class WPWebViewActivity extends WebViewActivity implements ErrorManagedWe
         int itemID = item.getItemId();
 
         if (itemID == android.R.id.home) {
+            Log.i("Themis", "WPWebViewActivity onOptionsItemSelected: step 5: press back");
             setResultIfNeeded();
         } else if (itemID == R.id.menu_refresh) {
             mWebView.reload();

@@ -140,7 +140,7 @@ class PostsListActivity : LocaleAwareActivity(),
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("Themis-#11992", "PostsListActivity onCreate : step 1: Selected the \"Blog Posts\".");
+        Log.i("Themis", "PostsListActivity onCreate : step 1: Selected the \"Blog Posts\".");
         (application as WordPress).component().inject(this)
         with(PostListActivityBinding.inflate(layoutInflater)) {
             setContentView(root)

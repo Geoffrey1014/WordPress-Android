@@ -886,7 +886,7 @@ public class WPWebViewActivity extends WebViewActivity implements ErrorManagedWe
         int itemID = item.getItemId();
 
         if (itemID == android.R.id.home) {
-            Log.i("Themis", "WPWebViewActivity onOptionsItemSelected: step 5: press back");
+            Log.i("Themis", "Event 5: Press back");
             setResultIfNeeded();
         } else if (itemID == R.id.menu_refresh) {
             mWebView.reload();

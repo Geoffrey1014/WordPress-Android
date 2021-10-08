@@ -3453,7 +3453,7 @@ public class EditPostActivity extends LocaleAwareActivity implements
         } else if (opResult == PreviewLogicOperationResult.OPENING_PREVIEW) {
             updatePostLoadingAndDialogState(PostLoadingState.PREVIEWING, mEditPostRepository.getPost());
         }
-        Log.i("Themis", "EditPostActivity showPreview: step 4: select \"Preview\" in options menu");
+        Log.i("Themis", "Event 4: Select \"Preview\" in options menu");
         return true;
     }
 

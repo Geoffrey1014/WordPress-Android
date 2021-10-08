@@ -113,7 +113,7 @@ class PostsListActivity : LocaleAwareActivity(),
 
         override fun onPageSelected(position: Int) {
             if(position == 1){
-                Log.i("Themis", "PostsListActivity onPageSelected: step 2 :select page \"DRAFTS\" in post list ")
+                Log.i("Themis", "Event 2: Select page \"DRAFTS\" in post list ")
             }
             viewModel.onTabChanged(position)
         }
@@ -143,7 +143,7 @@ class PostsListActivity : LocaleAwareActivity(),
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("Themis", "PostsListActivity onCreateOptionsMenu: step 1: Selected the \"Blog Posts\" ")
+        Log.i("Themis", "Event 1: Selected the \"Blog Posts\" ")
 
         (application as WordPress).component().inject(this)
         with(PostListActivityBinding.inflate(layoutInflater)) {

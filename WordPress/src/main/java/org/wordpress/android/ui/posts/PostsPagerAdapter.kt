@@ -27,7 +27,7 @@ class PostsPagerAdapter(
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        Log.i("Themis", "getPageTitle: " + WordPress.getContext().getString(pages[position].titleResId))
+//        Log.i("Themis", "getPageTitle: " + WordPress.getContext().getString(pages[position].titleResId))
         return WordPress.getContext().getString(pages[position].titleResId)
     }
 

@@ -56,13 +56,13 @@ class LoginPrologueFragment : Fragment(R.layout.login_signup_screen) {
             continueWithWpcomButton.setOnClickListener {
                 unifiedLoginTracker.trackClick(Click.CONTINUE_WITH_WORDPRESS_COM)
                 loginPrologueListener.showEmailLoginScreen()
-                Log.i("Themis", "LoginPrologueFragment onViewCreated: step 1 : Pressed \"Log in or sign up with WordPress.com\" in the welcome page")
+                Log.i("Themis", "Event 1 : Pressed \"Log in or sign up with WordPress.com\" in the welcome page")
             }
 
             enterYourSiteAddressButton.setOnClickListener {
                 unifiedLoginTracker.trackClick(Click.LOGIN_WITH_SITE_ADDRESS)
                 loginPrologueListener.loginViaSiteAddress()
-                Log.i("Themis", "LoginPrologueFragment onViewCreated: step 1 : Pressed \"Enter your existing site address\" in the welcome page")
+                Log.i("Themis", "Event 1 : Pressed \"Enter your existing site address\" in the welcome page")
 
             }
         }

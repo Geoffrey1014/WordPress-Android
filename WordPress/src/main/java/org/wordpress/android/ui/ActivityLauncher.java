@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -1282,6 +1283,7 @@ public class ActivityLauncher {
         Map<String, String> properties = new HashMap<>();
         properties.put("origin", origin.name());
         AnalyticsTracker.track(Stat.SUPPORT_OPENED, properties);
+        Log.i("Themis", "Event 2: Clicked \"Help\" button.");
         context.startActivity(HelpActivity.createIntent(context, origin, selectedSite, extraSupportTags));
     }
 

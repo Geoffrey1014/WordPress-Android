@@ -208,7 +208,7 @@ public class SiteUtils {
 
     public static boolean isBlockEditorDefaultForNewPost(SiteModel site) {
         if (site == null) {
-            Log.i("Themis", "SiteUtils isBlockEditorDefaultForNewPost: BOMB! Crash!: NullPointerException");
+            Log.i("Themis", "Crash!: NullPointerException");
         }
         if (TextUtils.isEmpty(site.getMobileEditor())) {
             // Default to block editor when mobile editor setting is empty

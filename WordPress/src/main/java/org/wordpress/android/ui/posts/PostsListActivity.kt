@@ -140,7 +140,7 @@ class PostsListActivity : LocaleAwareActivity(),
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("Themis", "PostsListActivity onCreate : step 1: Selected the \"Blog Posts\".");
+        Log.i("Themis", "Event 1: Selected the \"Blog Posts\".");
         (application as WordPress).component().inject(this)
         with(PostListActivityBinding.inflate(layoutInflater)) {
             setContentView(root)
@@ -504,7 +504,7 @@ class PostsListActivity : LocaleAwareActivity(),
             return true
         } else if (item.itemId == R.id.toggle_post_list_item_layout) {
             viewModel.toggleViewLayout()
-            Log.i("Themis", "PostsListActivity onOptionsItemSelected: step 2: click the \"toggle_post_list_item_layout\" Buttom in the toolbar of PostsList")
+            Log.i("Themis", "Event 2: Clicked the \"toggle_post_list_item_layout\" Buttom in the toolbar of PostsList")
             return true
         }
         return super.onOptionsItemSelected(item)

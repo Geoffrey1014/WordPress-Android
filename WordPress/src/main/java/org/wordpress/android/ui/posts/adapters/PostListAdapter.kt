@@ -77,7 +77,7 @@ class PostListAdapter(
                 try {
                     PostListItemViewHolder.Compact(parent, imageManager, uiHelpers)
                 }catch (e : NullPointerException){
-                    Log.i("Themis", "PostListAdapter onCreateViewHolder: BOMB! Crash! : NullPointerException")
+                    Log.i("Themis", "Crash!: NullPointerException")
                     throw e
                 }
             }

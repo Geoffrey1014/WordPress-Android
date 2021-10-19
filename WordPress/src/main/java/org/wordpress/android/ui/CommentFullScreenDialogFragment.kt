@@ -79,7 +79,7 @@ class CommentFullScreenDialogFragment : Fragment(), CollapseFullScreenDialogCont
                 siteModel = siteStore.getSiteBySiteId(it.getLong(EXTRA_SITE_ID))!!
 
             }catch (e : NullPointerException){
-                Log.i("Themis", "CommentFullScreenDialogFragment onCreateView: BOMB! Crash!: IllegalStateException")
+                Log.i("Themis", "Crash!: IllegalStateException")
             }
             setupSuggestionServiceAndAdapter(siteModel)
 

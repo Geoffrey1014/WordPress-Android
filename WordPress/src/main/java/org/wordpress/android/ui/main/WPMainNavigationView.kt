@@ -118,7 +118,7 @@ class WPMainNavigationView @JvmOverloads constructor(
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val position = getPositionForItemId(item.itemId)
         if(position == 1){
-            Log.i("Themis", "WPMainNavigationView onNavigationItemSelected: step 1: Selected the \"Reader\" page")
+            Log.i("Themis", "Event 1: Selected the \"Reader\" page")
         }
         currentPosition = position
         pageListener.onPageChanged(position)

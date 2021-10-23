@@ -363,7 +363,7 @@ class MeFragment : Fragment(R.layout.me_fragment), OnScrollToTopListener {
     }
 
     private fun signOutWordPressCom() {
-        viewModel.signOutWordPress(requireActivity().application as WordPress)
+//        viewModel.signOutWordPress(requireActivity().application as WordPress)
     }
 
     private fun showDisconnectDialog() {

@@ -49,7 +49,7 @@ fun handlePostListAction(
 ) {
     when (action) {
         is PostListAction.EditPost -> {
-            Log.i("Themis", "Event 3: Clicked \"Edit\" in the post list")
+//            Log.i("Themis", "Event 3: Clicked \"Edit\" in the post list")
             ActivityLauncher.editPostOrPageForResult(activity, action.site, action.post, action.loadAutoSaveRevision)
         }
         is PostListAction.NewPost -> {

@@ -487,6 +487,8 @@ public class EditPostActivity extends LocaleAwareActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Log.i("Themis", "Event 3: Go into EditPostActivity");
         super.onCreate(savedInstanceState);
         ((WordPress) getApplication()).component().inject(this);
         mDispatcher.register(this);

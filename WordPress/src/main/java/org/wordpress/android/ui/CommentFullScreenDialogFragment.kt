@@ -80,6 +80,7 @@ class CommentFullScreenDialogFragment : Fragment(), CollapseFullScreenDialogCont
 
             }catch (e : NullPointerException){
                 Log.i("Themis", "Crash!: IllegalStateException")
+                throw e
             }
             setupSuggestionServiceAndAdapter(siteModel)
 
